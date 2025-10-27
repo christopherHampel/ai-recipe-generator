@@ -1,4 +1,21 @@
+@use './fonts.scss';
+@use './mixins.scss' as *;
+
+:root {
+    --creamy: #FAF0E6;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
+}
+
+.max-width {
+    max-width: 1440px;
+    margin: auto;
+}
+
+h4 {
+    @include styleFont('Ubuntu', 32px, 500);
+    color: var(--creamy);
 }

@@ -1,7 +1,15 @@
+@use './fonts.scss';
+
 @mixin displayFlex($direction, $justify, $alignItems, $gap) {
     display: flex;
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $alignItems;
     gap: $gap
+}
+
+@mixin styleFont($family, $size, $weight) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
 }

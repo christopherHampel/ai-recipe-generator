@@ -1,12 +1,26 @@
 @use "./../../mixins.scss" as *;
 
 section {
+  @include displayFlex(row, space-between, flex-start, 0);
+}
+
+.bg-color-start {
   background-color: rgb(57, 96, 57);
-  @include displayFlex(row, space-between, center, 0);
+}
+
+.left-side-start {
+  padding: 40px 40px 0 68px;
+  height: 100vh;
+  @include displayFlex(column, space-between, space-between, 0);
 }
 
 .right-side-start {
   img {
     height: 100vh;
+    display: flex;
   }
+}
+
+.footer-start {
+  @include displayFlex(row, center, center, 0);
 }
