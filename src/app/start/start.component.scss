@@ -5,13 +5,17 @@ section {
 }
 
 .bg-color-start {
-  background-color: rgb(57, 96, 57);
+  background-color: var(--bg-color);
 }
 
 .left-side-start {
-  padding: 40px 40px 0 68px;
+  padding-left: 65px;
   height: 100vh;
-  @include displayFlex(column, space-between, space-between, 0);
+  @include displayFlex(column, space-between, flex-start, 0);
+
+  .head {
+    padding: 40px 40px 0 3px;
+  }
 }
 
 .right-side-start {
@@ -22,5 +26,17 @@ section {
 }
 
 .footer-start {
-  @include displayFlex(row, center, center, 0);
+  @include displayFlex(row, center, center, 16px);
+  div {
+    padding: 16px 26px;
+    @include displayFlex(row, center, center, 10px);
+
+    button {
+      background-color: var(--bg-color);
+    }
+  }
+}
+
+.main-content-start {
+  @include displayFlex(column, flex-start, flex-start, 64px);
 }

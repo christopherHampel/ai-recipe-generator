@@ -1,21 +1,57 @@
-@use './fonts.scss';
-@use './mixins.scss' as *;
+@use "./fonts.scss";
+@use "./mixins.scss" as *;
 
 :root {
-    --creamy: #FAF0E6;
+  --bg-color: rgb(57, 96, 57);
+  --creamy: #faf0e6;
+  --creamy-hover: #fae0c6;
+  --F5F5DC: #f5f5dc;
+  --secondary-btn-green: #396039;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .max-width {
-    max-width: 1440px;
-    margin: auto;
+  max-width: 1440px;
+  margin: auto;
+}
+
+h1 {
+  @include styleFont("Ubuntu", 104px, 700);
+  color: var(--creamy);
+}
+
+h2 {
+  @include styleFont("Quicksand", 48px, 600);
+  color: var(--F5F5DC);
 }
 
 h4 {
-    @include styleFont('Ubuntu', 32px, 500);
+  @include styleFont("Ubuntu", 32px, 500);
+  color: var(--creamy);
+}
+
+.primary-btn-creme {
+  padding: 16px 26px;
+  background-color: var(--creamy);
+  @include styleFont("Quicksand", 24px, 600);
+  color: var(--btn-green);
+  border: none;
+
+  &:hover {
+    background-color: var(--creamy-hover);
+    font-weight: 700;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.secondary-btn-cream {
+    border: none;
+    border-radius: 5px;
+    @include styleFont('Quicksand', 20px, 500);
     color: var(--creamy);
 }
