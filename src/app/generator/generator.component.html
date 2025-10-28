@@ -1,1 +1,20 @@
-<p>generator works!</p>
+<section [ngStyle]="{ 'padding-left': '68px' }">
+  <app-header [logoColor]="'green'"></app-header>
+
+  <article class="main-content">
+    <h3>Generate recipe</h3>
+    <article>
+      <h5>
+        Got random stuff in your kitchen? Pop it in—we’ve got the perfect recipe
+        waiting.
+      </h5>
+      <div class="add-ingredient">
+        <div>
+            <label for="ingredients">Ingredients</label>
+            <input type="text">
+        </div>
+      </div>
+      <div class="list-ingredients"></div>
+    </article>
+  </article>
+</section>
