@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './generator.component.scss'
 })
 export class GeneratorComponent {
-
+  
 }

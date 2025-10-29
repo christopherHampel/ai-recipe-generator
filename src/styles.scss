@@ -8,7 +8,7 @@
   --F5F5DC: #f5f5dc;
   --secondary-btn-green: 57, 96, 57;
   --middle-green: #1e5515;
-  --green-dark: #10310B;
+  --green-dark: #10310b;
 }
 
 * {
@@ -66,4 +66,21 @@ h5 {
   border-radius: 5px;
   @include styleFont("Quicksand", 20px, 500);
   color: var(--creamy);
+}
+
+input {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: var(--creamy);
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  @include styleFont("Quicksand", 16px, 500);
+  color: var(--green-dark);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

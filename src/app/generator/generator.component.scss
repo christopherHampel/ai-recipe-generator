@@ -18,10 +18,11 @@ section {
 }
 
 .add-ingredient {
+    @include displayFlex(row, center, center, 32px);
   padding: 25px 32px;
   background-color: rgba(var(--secondary-btn-green), 0.3);
   border-radius: 20px;
-  div {
+  .ingredient {
     @include displayFlex(column, flex-start, center, 16px);
 
     label {
