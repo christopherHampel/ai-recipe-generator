@@ -15,8 +15,59 @@
         </div>
         <div class="ingredient">
           <label for="ingredients">Serving size</label>
-          <div>
-            <input type="number" />
+          <div class="add-unit">
+            <div>
+              <input type="number" />
+            </div>
+
+            <!-- <div class="custom-select">
+              <select
+                id="unit-select"
+                (click)="$event.stopPropagation();toggleDropdownArrow()"
+                (blur)="isOpen = false"
+              >
+                <option value="grams" selected>grams</option>
+                <option value="ml">ml</option>
+                <option value="piece" (click)="isOpen = !isOpen">piece</option>
+              </select>
+
+              <img
+                class="arrow-icon"
+                [src]="
+                  isOpen ? '/img/arrow_drop_up.png' : '/img/arrow_drop_down.png'
+                "
+                alt="dropdown arrow"
+              />
+            </div> -->
+
+            <div
+              class="custom-select"
+              (click)="toggleDropdown()"
+              tabindex="0"
+              (blur)="closeDropdown()"
+            >
+              <div class="selected">
+                {{ selectedUnit }}
+                <img
+                  class="arrow"
+                  src="{{ isOpen ? '/img/arrow_drop_up.png' : '/img/arrow_drop_down.png'}}"
+                alt="Dropdown arrow" />
+              </div>
+
+              <div class="options" *ngIf="isOpen">
+                <div
+                  class="option"
+                  *ngFor="let unit of units"
+                  (click)="selectUnit(unit)"
+                >
+                  {{ unit }}
+                </div>
+              </div>
+            </div>
+
+            <div class="add-to">
+              <img src="/img/button Add to.png" alt="" />
+            </div>
           </div>
         </div>
       </div>

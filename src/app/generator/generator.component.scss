@@ -18,7 +18,7 @@ section {
 }
 
 .add-ingredient {
-    @include displayFlex(row, center, center, 32px);
+  @include displayFlex(row, center, center, 32px);
   padding: 25px 32px;
   background-color: rgba(var(--secondary-btn-green), 0.3);
   border-radius: 20px;
@@ -29,4 +29,70 @@ section {
       @include styleFont("Quicksand", 20px, 500);
     }
   }
+}
+
+.add-unit {
+  @include displayFlex(row, center, center, 8px);
+}
+
+.options-dropdown {
+  height: 100px;
+}
+
+.custom-select {
+  border-radius: 48px;
+  background-color: var(--creamy);
+  height: 36px;
+  @include displayFlex(row, center, center, 0);
+  position: relative;
+  z-index: 10;
+  //   display: inline-block;
+  //   cursor: pointer;
+  //   background: white;
+  //   border: none;
+  //   outline: none;
+  //   font-size: 14px;
+  //   user-select: none;
+}
+
+.selected {
+  @include displayFlex(row, center, center, 8px);
+  @include styleFont("Quicksand", 16px, 500);
+  padding: 0 5px;
+  border-radius: 48px;
+  z-index: 9;
+  position: relative;
+}
+
+.arrow {
+  //   width: 14px;
+  //   height: 14px;
+  transition: transform 0.25s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+.options {
+  @include styleFont("Quicksand", 16px, 500);
+  background-color: var(--creamy);
+
+  position: absolute;
+  top: calc(100% - 14px);
+  left: 0;
+  right: 0;
+  //   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  //   border-radius: 6px;
+  //   z-index: 10;
+}
+
+.option {
+  margin-top: 12px;
+  padding: 8px 12px;
+  transition: background 0.2s;
+}
+
+.option:hover {
+  background: #eee;
 }
