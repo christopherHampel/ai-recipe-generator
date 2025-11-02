@@ -5,7 +5,6 @@ section {
   app-header {
     width: 100%;
   }
-
   @include displayFlex(column, center, center, 64px);
 }
 
@@ -17,13 +16,19 @@ section {
   }
 }
 
+.ingredients-container {
+    @include displayFlex(row, center, flex-start, 32px);
+}
+
 .add-ingredient {
-  @include displayFlex(row, center, center, 32px);
+  width: 577px;
+  @include displayFlex(row, flex-end, flex-start, 32px);
   padding: 25px 32px;
   background-color: rgba(var(--secondary-btn-green), 0.3);
   border-radius: 20px;
   .ingredient {
-    @include displayFlex(column, flex-start, center, 16px);
+    @include displayFlex(column, flex-start, flex-start, 16px);
+    flex: 1;
 
     label {
       @include styleFont("Quicksand", 20px, 500);
@@ -32,11 +37,19 @@ section {
 }
 
 .add-unit {
-  @include displayFlex(row, center, center, 8px);
+  @include displayFlex(row, center, flex-start, 8px);
+  height: 91px;
+  .quantity {
+    width: 61px;
+  }
 }
 
 .options-dropdown {
   height: 100px;
+}
+
+.add-to {
+    cursor: pointer;
 }
 
 .custom-select {
@@ -46,13 +59,6 @@ section {
   @include displayFlex(row, center, center, 0);
   position: relative;
   z-index: 10;
-  //   display: inline-block;
-  //   cursor: pointer;
-  //   background: white;
-  //   border: none;
-  //   outline: none;
-  //   font-size: 14px;
-  //   user-select: none;
 }
 
 .selected {
@@ -65,8 +71,6 @@ section {
 }
 
 .arrow {
-  //   width: 14px;
-  //   height: 14px;
   transition: transform 0.25s ease;
 }
 
@@ -82,9 +86,6 @@ section {
   top: calc(100% - 14px);
   left: 0;
   right: 0;
-  //   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  //   border-radius: 6px;
-  //   z-index: 10;
 }
 
 .option {
@@ -95,4 +96,13 @@ section {
 
 .option:hover {
   background: #eee;
+}
+
+.list-ingredients {
+  min-height: 209px;
+  width: 478px;
+  border-radius: 20px;
+  padding: 24px;
+  @include displayFlex(column, flex-start, flex-start, 24px);
+  background-color: rgba(var(--secondary-btn-green), 0.3);
 }
