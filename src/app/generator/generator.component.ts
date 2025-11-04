@@ -18,37 +18,13 @@ export class GeneratorComponent {
   crowd: number | null = null;
   addedIngredients: { name: string; crowd: number; unit: string }[] = [];
 
-  // addedIngredients: any = [
-  //   {
-  //     name: 'Zwiebel',
-  //     crowd: '2',
-  //     unit: 'piece',
-  //   },
-  //   {
-  //     name: 'Mehl',
-  //     crowd: '200',
-  //     unit: 'grams',
-  //   },
-  //   {
-  //     name: 'Milch',
-  //     crowd: '100',
-  //     unit: 'ml',
-  //   },
-
-  //   {
-  //     name: 'Milch',
-  //     crowd: '100',
-  //     unit: 'ml',
-  //   },
-  // ];
-
   toggleDropdown() {
     this.isOpen = !this.isOpen;
   }
 
   selectUnit(unit: string) {
     this.selectedUnit = unit;
-    this.isOpen = false;
+    this.closeDropdown();
   }
 
   closeDropdown() {
@@ -70,6 +46,5 @@ export class GeneratorComponent {
     this.crowd = null;
 
     console.log(this.addedIngredients);
-    
   }
 }

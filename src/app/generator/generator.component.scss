@@ -17,7 +17,7 @@ section {
 }
 
 .ingredients-container {
-    @include displayFlex(row, center, flex-start, 32px);
+  @include displayFlex(row, center, flex-start, 32px);
 }
 
 .add-ingredient {
@@ -49,13 +49,14 @@ section {
 }
 
 .add-to {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .custom-select {
   border-radius: 48px;
   background-color: var(--creamy);
   height: 36px;
+  width: 82px;
   @include displayFlex(row, center, center, 0);
   position: relative;
   z-index: 10;

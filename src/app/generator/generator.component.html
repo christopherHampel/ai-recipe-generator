@@ -21,13 +21,8 @@
                 <input [(ngModel)]="crowd" type="number" />
               </div>
 
-              <div
-                class="custom-select"
-                (click)="toggleDropdown()"
-                tabindex="0"
-                (blur)="closeDropdown()"
-              >
-                <div class="selected">
+              <div class="custom-select" tabindex="0" (blur)="closeDropdown()">
+                <div class="selected" (click)="toggleDropdown()">
                   {{ selectedUnit }}
                   <img
                     class="arrow"
