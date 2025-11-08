@@ -99,18 +99,18 @@ section {
   background: #eee;
 }
 
-.list-ingredients {
-  min-height: 209px;
-  width: 478px;
-  border-radius: 20px;
-  padding: 24px;
-  @include displayFlex(column, flex-start, flex-start, 24px);
-  background-color: rgba(var(--secondary-btn-green), 0.3);
+// .list-ingredients {
+//   min-height: 209px;
+//   width: 478px;
+//   border-radius: 20px;
+//   padding: 24px;
+//   @include displayFlex(column, flex-start, flex-start, 24px);
+//   background-color: rgba(var(--secondary-btn-green), 0.3);
 
-  div {
-    width: 100%;
-  }
-}
+//   div {
+//     width: 100%;
+//   }
+// }
 
 .next-step {
   width: 100%;

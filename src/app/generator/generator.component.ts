@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SingleIngredientComponent } from './single-ingredient/single-ingredient.component';
 import { IngredientService } from '../services/ingredient.service';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-generator',
   standalone: true,
-  imports: [HeaderComponent, CommonModule, FormsModule, SingleIngredientComponent],
+  imports: [HeaderComponent, CommonModule, FormsModule, SingleIngredientComponent, RouterLink],
   templateUrl: './generator.component.html',
   styleUrl: './generator.component.scss',
 })
@@ -50,5 +51,9 @@ export class GeneratorComponent {
 
     this.ingredient = '';
     this.crowd = null;
+  }
+
+  get ingredients() {
+    return this.ingredientService.addedIngredients
   }
 }

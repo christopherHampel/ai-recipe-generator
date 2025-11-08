@@ -10,3 +10,17 @@ ul {
 .edit-delete {
   @include displayFlex(row, center, center, 16px);
 }
+
+.ingredients-list-righside {
+  min-height: 209px;
+  width: 478px;
+  border-radius: 20px;
+  padding: 24px;
+  @include displayFlex(column, flex-start, flex-start, 24px);
+  background-color: rgba(var(--secondary-btn-green), 0.3);
+
+  .list-ingredients {
+    width: 100%;
+    @include displayFlex(column, flex-start, flex-start, 6px);
+  }
+}

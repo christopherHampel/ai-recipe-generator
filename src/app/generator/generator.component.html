@@ -56,17 +56,14 @@
           </div>
         </div>
 
-        <div class="list-ingredients">
-          <h5>List of your ingredients</h5>
-          <div>
-            <app-single-ingredient></app-single-ingredient>
-          </div>
-        </div>
+        <app-single-ingredient></app-single-ingredient>
       </div>
     </article>
 
     <aside class="next-step">
-      <button class="primary-btn-green">Next step</button>
+      @if(ingredients.length > 0) {
+      <button [routerLink]="'/preferences'" class="primary-btn-green">Next step</button>
+      }
     </aside>
   </article>
 </section>
