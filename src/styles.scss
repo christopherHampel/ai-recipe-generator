@@ -9,6 +9,7 @@
   --secondary-btn-green: 57, 96, 57;
   --middle-green: #1e5515;
   --green-dark: #10310b;
+  --green-btn-hover: #055E05;
 }
 
 * {
@@ -66,6 +67,20 @@ h5 {
   border-radius: 5px;
   @include styleFont("Quicksand", 20px, 500);
   color: var(--creamy);
+}
+
+.primary-btn-green {
+  padding: 16px 26px;
+  background-color: var(--bg-color);
+  @include styleFont('Quicksand', 24px, 600);
+  color: var(--creamy);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--green-btn-hover);
+    font-weight: 700;
+    color: #FFFF;
+  }
 }
 
 input {

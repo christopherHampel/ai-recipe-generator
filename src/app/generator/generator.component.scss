@@ -111,3 +111,8 @@ section {
     width: 100%;
   }
 }
+
+.next-step {
+  width: 100%;
+  @include displayFlex(row, flex-end, center, 0);
+}
