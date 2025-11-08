@@ -1,24 +1,33 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from '../shared/header/header.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { SingleIngredientComponent } from "./single-ingredient/single-ingredient.component";
-import { Ingredient } from '../interfaces/ingredient';
+import { SingleIngredientComponent } from './single-ingredient/single-ingredient.component';
+import { IngredientService } from '../services/ingredient.service';
 
 @Component({
   selector: 'app-generator',
+  standalone: true,
   imports: [HeaderComponent, CommonModule, FormsModule, SingleIngredientComponent],
   templateUrl: './generator.component.html',
   styleUrl: './generator.component.scss',
 })
 export class GeneratorComponent {
-  isOpen = false;
-  units = ['grams', 'ml', 'piece'];
-  selectedUnit = 'grams';
+  private ingredientService = inject(IngredientService);
 
-  ingredient: string = '';
+  ingredient = '';
   crowd: number | null = null;
-  addedIngredients: Ingredient[] = [];
+  selectedUnit = '';
+  units: string[] = [];
+
+  isOpen = false;
+
+  constructor() {
+    this.units = this.ingredientService.units;
+    this.selectedUnit = this.ingredientService.selectedUnit;
+    this.ingredient = this.ingredientService.ingredient;
+    this.crowd = this.ingredientService.crowd;
+  }
 
   toggleDropdown() {
     this.isOpen = !this.isOpen;
@@ -26,6 +35,7 @@ export class GeneratorComponent {
 
   selectUnit(unit: string) {
     this.selectedUnit = unit;
+    this.ingredientService.selectedUnit = unit;
     this.closeDropdown();
   }
 
@@ -34,14 +44,10 @@ export class GeneratorComponent {
   }
 
   addIngredient() {
-    if (!this.ingredient || this.crowd === null) return;
+    this.ingredientService.ingredient = this.ingredient;
+    this.ingredientService.crowd = this.crowd;
+    this.ingredientService.addIngredient();
 
-    const newIngredient = {
-      name: this.ingredient,
-      crowd: this.crowd,
-      unit: this.selectedUnit,
-    };
-    this.addedIngredients.push(newIngredient);
     this.ingredient = '';
     this.crowd = null;
   }

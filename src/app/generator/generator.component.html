@@ -8,14 +8,17 @@
         Got random stuff in your kitchen? Pop it in—we’ve got the perfect recipe
         waiting.
       </h5>
+
       <div class="ingredients-container">
         <div class="add-ingredient">
           <div class="ingredient">
             <label for="ingredients">Ingredients</label>
             <input [(ngModel)]="ingredient" type="text" />
           </div>
+
           <div class="ingredient">
             <label for="ingredients">Serving size</label>
+
             <div class="add-unit">
               <div class="quantity">
                 <input [(ngModel)]="crowd" type="number" />
@@ -26,11 +29,11 @@
                   {{ selectedUnit }}
                   <img
                     class="arrow"
-                    src="{{
+                    [src]="
                       isOpen
                         ? '/img/arrow_drop_up.png'
                         : '/img/arrow_drop_down.png'
-                    }}"
+                    "
                     alt="Dropdown arrow"
                   />
                 </div>
@@ -47,7 +50,7 @@
               </div>
 
               <div class="add-to" (click)="addIngredient()">
-                <img src="/img/button Add to.png" alt="" />
+                <img src="/img/button Add to.png" alt="Add ingredient" />
               </div>
             </div>
           </div>
@@ -56,13 +59,12 @@
         <div class="list-ingredients">
           <h5>List of your ingredients</h5>
           <div>
-            <app-single-ingredient
-              [ingredients]="addedIngredients"
-            ></app-single-ingredient>
+            <app-single-ingredient></app-single-ingredient>
           </div>
         </div>
       </div>
     </article>
+
     <aside class="next-step">
       <button class="primary-btn-green">Next step</button>
     </aside>
