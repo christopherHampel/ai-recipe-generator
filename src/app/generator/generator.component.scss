@@ -106,4 +106,8 @@ section {
   padding: 24px;
   @include displayFlex(column, flex-start, flex-start, 24px);
   background-color: rgba(var(--secondary-btn-green), 0.3);
+
+  div {
+    width: 100%;
+  }
 }

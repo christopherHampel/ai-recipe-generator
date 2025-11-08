@@ -1,0 +1,12 @@
+@use "./../../../styles.scss" as *;
+@use "./../../../mixins.scss" as *;
+
+ul {
+  width: 100%;
+  @include displayFlex(row, space-between, center, 0);
+  @include styleFont("Quicksand", 18px, 500);
+}
+
+.edit-delete {
+  @include displayFlex(row, center, center, 16px);
+}

@@ -55,13 +55,11 @@
 
         <div class="list-ingredients">
           <h5>List of your ingredients</h5>
-          <ul class="added-ingredients"></ul>
-          @for (ingredient of addedIngredients; track $index) {
-          <li>
-            {{ ingredient.crowd }} {{ ingredient.unit }}
-            {{ ingredient.name }}
-          </li>
-          }
+          <div>
+            <app-single-ingredient
+              [ingredients]="addedIngredients"
+            ></app-single-ingredient>
+          </div>
         </div>
       </div>
     </article>

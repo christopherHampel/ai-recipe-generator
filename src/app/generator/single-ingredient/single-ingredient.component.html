@@ -1,0 +1,16 @@
+@if(ingredients.length > 0) { @for (ingredient of ingredients; track $index) {
+<ul>
+  <li class="ingredient-crowd">
+    {{ ingredient.crowd }} {{ ingredient.unit }}
+    {{ ingredient.name }}
+  </li>
+  <div class="edit-delete">
+    <button (click)="editIngredient(ingredient)">
+      <img src="\img\edit_cuisine.png" alt="Edit" />
+    </button>
+    <button (click)="deleteIngredient(ingredient)">
+      <img src="/img/delete_cuisine.png" alt="" />
+    </button>
+  </div>
+</ul>
+} }
