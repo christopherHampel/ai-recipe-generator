@@ -10,7 +10,7 @@ export class IngredientService {
   ingredient: string = '';
   crowd: number | null = null;
   portions: number = 2;
-  persons:number = 1;
+  persons:number = 3;
   addedIngredients: Ingredient[] = [];
 
   constructor() {}

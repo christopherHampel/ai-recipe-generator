@@ -5,7 +5,7 @@ import { IngredientService } from '../../services/ingredient.service';
   selector: 'app-preferences',
   imports: [],
   templateUrl: './preferences.component.html',
-  styleUrl: './preferences.component.scss'
+  styleUrl: './preferences.component.scss',
 })
 export class PreferencesComponent {
   private ingredientsService = inject(IngredientService);
@@ -14,12 +14,36 @@ export class PreferencesComponent {
     return this.ingredientsService.portions;
   }
 
-    get persons() {
+  get persons() {
     return this.ingredientsService.persons;
   }
 
-  minusPortion() {
-    let portion = this.ingredientsService.portions - 1;
-    this.ingredientsService.portions = portion;    
+  changeValue(key: 'portions' | 'persons', operator: string) {
+    const current = this.ingredientsService[key];
+    if (operator == '-') {
+      this.minusValue(key, current);
+    } else {
+      this.plusValue(key, current);
+    }
+  }
+
+  minusValue(key: 'portions' | 'persons', current: number) {
+    if (current > 1) {
+      if (typeof current === 'number') {
+        this.ingredientsService[key] = current - 1;
+      } else {
+        this.ingredientsService[key] = current - 1;
+      }
+    }
+  }
+
+  plusValue(key: 'portions' | 'persons', current: number) {
+    if (current < 8) {
+      if (typeof current === 'number') {
+        this.ingredientsService[key] = current + 1;
+      } else {
+        this.ingredientsService[key] = current + 1;
+      }
+    }
   }
 }
