@@ -1,49 +1,13 @@
-import { Component, inject } from '@angular/core';
-import { IngredientService } from '../../services/ingredient.service';
+import { Component } from '@angular/core';
+import { DetailPreferencesComponent } from "./detail-preferences/detail-preferences.component";
+import { PortionsPersonsCounterComponent } from "./portions-persons-counter/portions-persons-counter.component";
 
 @Component({
   selector: 'app-preferences',
-  imports: [],
+  imports: [DetailPreferencesComponent, PortionsPersonsCounterComponent],
   templateUrl: './preferences.component.html',
   styleUrl: './preferences.component.scss',
 })
 export class PreferencesComponent {
-  private ingredientsService = inject(IngredientService);
-
-  get portions() {
-    return this.ingredientsService.portions;
-  }
-
-  get persons() {
-    return this.ingredientsService.persons;
-  }
-
-  changeValue(key: 'portions' | 'persons', operator: string) {
-    const current = this.ingredientsService[key];
-    if (operator == '-') {
-      this.minusValue(key, current);
-    } else {
-      this.plusValue(key, current);
-    }
-  }
-
-  minusValue(key: 'portions' | 'persons', current: number) {
-    if (current > 1) {
-      if (typeof current === 'number') {
-        this.ingredientsService[key] = current - 1;
-      } else {
-        this.ingredientsService[key] = current - 1;
-      }
-    }
-  }
-
-  plusValue(key: 'portions' | 'persons', current: number) {
-    if (current < 8) {
-      if (typeof current === 'number') {
-        this.ingredientsService[key] = current + 1;
-      } else {
-        this.ingredientsService[key] = current + 1;
-      }
-    }
-  }
+ 
 }

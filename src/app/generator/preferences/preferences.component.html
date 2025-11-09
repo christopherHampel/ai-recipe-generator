@@ -1,25 +1,11 @@
 <section>
   <h6>Choose your preferences</h6>
 
-  <article class="portions-persons">
-    <div class="portions">
-      <span>How many portions you need?</span>
-      <aside>
-        <button (click)="changeValue('portions', '-')"><img src="/img/chips.png" alt="Minus" /></button>
-        <span class="number-count">{{ portions }}</span>
-        <span>Portions</span>
-        <button (click)="changeValue('portions', '+')"><img src="/img/Plus.png" alt="Plus" /></button>
-      </aside>
-    </div>
+  <article>
+    <app-portions-persons-counter></app-portions-persons-counter>
+  </article>
 
-    <div class="persons">
-      <span>How many are cooking?</span>
-      <aside>
-        <button (click)="changeValue('persons', '-')"><img src="/img/chips.png" alt="Minus" /></button>
-        <span class="number-count">{{ persons }}</span>
-        <span>Persons</span>
-        <button (click)="changeValue('persons', '+')"><img src="/img/Plus.png" alt="Plus" /></button>
-      </aside>
-    </div>
+  <article>
+    <app-detail-preferences></app-detail-preferences>
   </article>
 </section>

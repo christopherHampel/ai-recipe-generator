@@ -1,0 +1,29 @@
+  <article class="portions-persons">
+    <div class="portions">
+      <span>How many portions you need?</span>
+      <aside>
+        <button (click)="changeValue('portions', '-')">
+          <img src="/img/chips.png" alt="Minus" />
+        </button>
+        <span class="number-count">{{ portions }}</span>
+        <span>Portions</span>
+        <button (click)="changeValue('portions', '+')">
+          <img src="/img/Plus.png" alt="Plus" />
+        </button>
+      </aside>
+    </div>
+
+    <div class="persons">
+      <span>How many are cooking?</span>
+      <aside>
+        <button (click)="changeValue('persons', '-')">
+          <img src="/img/chips.png" alt="Minus" />
+        </button>
+        <span class="number-count">{{ persons }}</span>
+        <span>Persons</span>
+        <button (click)="changeValue('persons', '+')">
+          <img src="/img/Plus.png" alt="Plus" />
+        </button>
+      </aside>
+    </div>
+  </article>

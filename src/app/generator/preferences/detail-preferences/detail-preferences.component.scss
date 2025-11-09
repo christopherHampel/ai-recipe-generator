@@ -1,0 +1,37 @@
+@use './../../../../mixins.scss' as *;
+@use './../../../../styles.scss' as *;
+
+.time-cuisine-diet {
+  padding: 32px 24px;
+  border-radius: 20px;
+  background-color: rgba($color: #396039, $alpha: 0.2);
+//   width: 100%;
+  @include displayFlex(column, flex-start, flex-start, 40px);
+  .flexbox {
+    @include displayFlex(column, center, flex-start, 24px);
+
+    .headline {
+      @include displayFlex(row, center, center, 2px);
+    }
+
+    .buttons-time {
+      @include displayFlex(row, center, center, 20px);
+    }
+
+    div {
+      @include displayFlex(column, center, center, 12px);
+
+      button {
+        padding: 6px 12px;
+        border-radius: 30px;
+        background-color: var(--creamy);
+        @include styleFont("Quicksand", 20px, 500);
+        color: var(--middle-green);
+      }
+
+      span {
+        @include styleFont("Quicksand", 14px, 500);
+      }
+    }
+  }
+}
