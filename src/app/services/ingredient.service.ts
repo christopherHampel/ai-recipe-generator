@@ -12,6 +12,7 @@ export class IngredientService {
   portions: number = 2;
   persons:number = 3;
   addedIngredients: Ingredient[] = [];
+  selectedCuisineStyle: string[] = [];
 
   constructor() {}
 

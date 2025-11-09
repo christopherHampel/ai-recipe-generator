@@ -1,0 +1,16 @@
+<section>
+  <div class="flexbox">
+    <div class="headline">
+      <img src="/img/schedule.png" alt="" />
+      <h5>Cooking time:</h5>
+    </div>
+
+    <div class="buttons-time">
+      @for (cuisine of cuisinesStyles; track $index) {
+      <div (click)="selectCuisineStyle(cuisine)" [class.selected]="">
+        <button>{{ cuisine }}</button>
+      </div>
+      }
+    </div>
+  </div>
+</section>
