@@ -10,8 +10,16 @@ import { IngredientService } from '../../services/ingredient.service';
 export class PreferencesComponent {
   private ingredientsService = inject(IngredientService);
 
-  ngOnInit() {
-    console.log(this.ingredientsService.addedIngredients); 
+  get portions() {
+    return this.ingredientsService.portions;
   }
 
+    get persons() {
+    return this.ingredientsService.persons;
+  }
+
+  minusPortion() {
+    let portion = this.ingredientsService.portions - 1;
+    this.ingredientsService.portions = portion;    
+  }
 }

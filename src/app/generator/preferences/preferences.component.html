@@ -1,1 +1,25 @@
-<p>preferences works!</p>
+<section>
+  <h6>Choose your preferences</h6>
+
+  <article class="portions-persons">
+    <div class="portions">
+      <span>How many portions you need?</span>
+      <aside>
+        <button (click)="minusPortion()"><img src="/img/chips.png" alt="Minus" /></button>
+        <span class="number-count">{{ portions }}</span>
+        <span>Portions</span>
+        <button><img src="/img/Plus.png" alt="Plus" /></button>
+      </aside>
+    </div>
+
+    <div class="persons">
+      <span>How many are cooking?</span>
+      <aside>
+        <button><img src="/img/chips.png" alt="Minus" /></button>
+        <span class="number-count">{{ persons }}</span>
+        <span>Persons</span>
+        <button><img src="/img/Plus.png" alt="Plus" /></button>
+      </aside>
+    </div>
+  </article>
+</section>

@@ -47,6 +47,11 @@ h5 {
   color: var(--green-dark);
 }
 
+h6 {
+  @include styleFont('Quicksand', 28px, 600);
+  color: var(--green-dark);
+}
+
 .primary-btn-creme {
   padding: 16px 26px;
   background-color: var(--creamy);

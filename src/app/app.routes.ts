@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { StartComponent } from './start/start.component';
 import { GeneratorComponent } from './generator/generator.component';
 import { PreferencesComponent } from './generator/preferences/preferences.component';
+import { IngredientsComponent } from './generator/ingredients/ingredients.component';
 
 export const routes: Routes = [
   {
@@ -11,9 +12,15 @@ export const routes: Routes = [
   {
     path: 'generate_recipe',
     component: GeneratorComponent,
-  },
-  {
-    path: 'preferences',
-    component: PreferencesComponent,
+    children: [
+      {
+        path: 'ingredients',
+        component: IngredientsComponent,
+      },
+      {
+        path: 'preferences',
+        component: PreferencesComponent,
+      },
+    ],
   },
 ];

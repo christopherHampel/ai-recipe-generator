@@ -1,0 +1,98 @@
+@use "./../../../mixins.scss" as *;
+@use "./../../../styles.scss" as *;
+
+.main-content {
+  @include displayFlex(column, center, center, 24px);
+
+  article {
+    @include displayFlex(column, center, center, 64px);
+  }
+}
+
+.ingredients-container {
+  @include displayFlex(row, center, flex-start, 32px);
+}
+
+.add-ingredient {
+  width: 577px;
+  @include displayFlex(row, flex-end, flex-start, 32px);
+  padding: 25px 32px;
+  background-color: rgba(var(--secondary-btn-green), 0.3);
+  border-radius: 20px;
+  .ingredient {
+    @include displayFlex(column, flex-start, flex-start, 16px);
+    flex: 1;
+
+    label {
+      @include styleFont("Quicksand", 20px, 500);
+    }
+  }
+}
+
+.add-unit {
+  @include displayFlex(row, center, flex-start, 8px);
+  height: 91px;
+  .quantity {
+    width: 61px;
+  }
+}
+
+.options-dropdown {
+  height: 100px;
+}
+
+.add-to {
+  cursor: pointer;
+}
+
+.custom-select {
+  border-radius: 48px;
+  background-color: var(--creamy);
+  height: 36px;
+  width: 82px;
+  @include displayFlex(row, center, center, 0);
+  position: relative;
+  z-index: 10;
+}
+
+.selected {
+  @include displayFlex(row, center, center, 8px);
+  @include styleFont("Quicksand", 16px, 500);
+  padding: 0 5px;
+  border-radius: 48px;
+  z-index: 9;
+  position: relative;
+}
+
+.arrow {
+  transition: transform 0.25s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+.options {
+  @include styleFont("Quicksand", 16px, 500);
+  background-color: var(--creamy);
+
+  position: absolute;
+  top: calc(100% - 14px);
+  left: 0;
+  right: 0;
+}
+
+.option {
+  margin-top: 12px;
+  padding: 8px 12px;
+  transition: background 0.2s;
+}
+
+.option:hover {
+  background: #eee;
+}
+
+.next-step {
+  width: 100%;
+  @include displayFlex(row, flex-end, center, 0);
+}

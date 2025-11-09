@@ -9,6 +9,8 @@ export class IngredientService {
   selectedUnit = 'grams';
   ingredient: string = '';
   crowd: number | null = null;
+  portions: number = 2;
+  persons:number = 1;
   addedIngredients: Ingredient[] = [];
 
   constructor() {}
