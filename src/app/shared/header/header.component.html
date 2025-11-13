@@ -1,4 +1,5 @@
 <section>
+  <article>
     @if(logoColor == 'green') {
     <img src="/img/logo_image_green.png" alt="Logo_Image" />
     <img src="/img/logo_lettering_green.png" alt="Logo_Image" />
@@ -6,4 +7,11 @@
     <img src="/img/logo_image.png" alt="Logo_Image" />
     <img src="/img/logo_lettering.png" alt="Logo_Image" />
     }
+  </article>
+
+  <article>
+    @if(this.router.url == '/generate_recipe/ingredients') {
+    <span>Ingredient</span>
+    }
+  </article>
 </section>

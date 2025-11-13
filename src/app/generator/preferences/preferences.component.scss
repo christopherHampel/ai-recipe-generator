@@ -38,6 +38,11 @@ section {
         background-color: var(--creamy);
         @include styleFont("Quicksand", 20px, 500);
         color: var(--middle-green);
+        cursor: pointer;
+
+        &:hover {
+          background-color: #FAE0C6;
+        }
       }
 
       span {
@@ -45,4 +50,13 @@ section {
       }
     }
   }
+}
+
+.selected {
+  background-color: rgba($color: #396039, $alpha: 0.2) !important;
+}
+
+.next-step {
+  width: 100%;
+  @include displayFlex(row, center, center, 0);
 }

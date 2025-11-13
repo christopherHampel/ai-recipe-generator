@@ -1,14 +1,14 @@
 <section>
   <div class="flexbox">
     <div class="headline">
-      <img src="/img/schedule.png" alt="" />
-      <h5>Cooking time:</h5>
+      <img src="/img/fork_spoon.png" alt="" />
+      <h5>Diet preferences</h5>
     </div>
 
     <div class="buttons-time">
-      @for (cuisine of dietPreferences; track $index) {
-      <div (click)="selectCuisineStyle(cuisine)" [class.selected]="">
-        <button>{{ cuisine }}</button>
+      @for (diet of dietPreferences; track $index) {
+      <div (click)="selectDietPreference(diet)">
+        <button [ngClass]="{'selected': isSelected(diet)}">{{ diet }}</button>
       </div>
       }
     </div>

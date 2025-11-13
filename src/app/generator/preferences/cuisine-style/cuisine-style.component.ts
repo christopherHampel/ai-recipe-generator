@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { IngredientService } from '../../../services/ingredient.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cuisine-style',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './cuisine-style.component.html',
   styleUrl: './cuisine-style.component.scss',
 })
@@ -36,6 +37,10 @@ export class CuisineStyleComponent {
   }
 
   styleIncludes(cuisine: string) {
+    return this.ingredientService.selectedCuisineStyle.includes(cuisine);
+  }
+
+  isSelected(cuisine:string) {
     return this.ingredientService.selectedCuisineStyle.includes(cuisine);
   }
 }

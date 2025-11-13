@@ -1,35 +1,38 @@
 import { Component, inject } from '@angular/core';
 import { IngredientService } from '../../../services/ingredient.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-diet-preferences',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './diet-preferences.component.html',
-  styleUrl: './diet-preferences.component.scss'
+  styleUrl: './diet-preferences.component.scss',
 })
 export class DietPreferencesComponent {
-private ingredientService = inject(IngredientService);
+  private ingredientService = inject(IngredientService);
 
-dietPreferences: string[] = [
-  'Vegetarian',
-  'Vegan',
-  'Keto',
-  'No preferences',
-];
+  dietPreferences: string[] = ['Vegetarian', 'Vegan', 'Keto', 'No preferences'];
 
-  selectCuisineStyle(cuisine: string) {
-    if (!this.styleIncludes(cuisine)) {
-      this.ingredientService.selectedCuisineStyle.push(cuisine);
+  selectDietPreference(diet: string) {
+    if (!this.styleIncludes(diet)) {
+      this.ingredientService.selectedDietPreferences.push(diet);
     } else {
-      this.removeCuisineStyle(cuisine);
+      this.removeDietPreference(diet);
     }
-    console.log(this.ingredientService.selectedCuisineStyle);
   }
 
-  styleIncludes(cuisine:string) {
-    return false
+  styleIncludes(diet: string) {
+    return this.ingredientService.selectedDietPreferences.includes(diet);
   }
 
-  removeCuisineStyle(cuisine:string) {}
+  removeDietPreference(diet: string) {
+    let currentIndex = this.ingredientService.selectedDietPreferences.findIndex(
+      (index) => index == diet
+    );
+    this.ingredientService.selectedDietPreferences.splice(currentIndex, 1);
+  }
 
+  isSelected(diet: string) {
+    return this.ingredientService.selectedDietPreferences.includes(diet);
+  }
 }

@@ -1,3 +1,11 @@
+@use "./../../../mixins.scss" as *;
+
 section {
   padding: 40px 40px 0 3px;
+  @include displayFlex(column, flex-start, flex-start, 32px);
+
+  span {
+    @include styleFont('Quicksand', 14px, 500);
+    color: var(--middle-green);
+  }
 }
