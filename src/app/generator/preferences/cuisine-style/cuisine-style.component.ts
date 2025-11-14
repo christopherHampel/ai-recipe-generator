@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { IngredientService } from '../../../services/ingredient.service';
 import { CommonModule } from '@angular/common';
+import { PreferenceBaseComponent } from '../preference-base';
 
 @Component({
   selector: 'app-cuisine-style',
@@ -8,8 +9,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './cuisine-style.component.html',
   styleUrl: './cuisine-style.component.scss',
 })
-export class CuisineStyleComponent {
-  private ingredientService = inject(IngredientService);
+export class CuisineStyleComponent extends PreferenceBaseComponent {
+  constructor(ingredientService: IngredientService) {
+    super(ingredientService);
+  }
+
+  list = this.ingredientService.selectedCuisineStyle;
 
   cuisinesStyles: string[] = [
     'German',
@@ -19,28 +24,4 @@ export class CuisineStyleComponent {
     'Gourmet',
     'Fusion',
   ];
-
-  selectCuisineStyle(cuisine: string) {
-    if (!this.styleIncludes(cuisine)) {
-      this.ingredientService.selectedCuisineStyle.push(cuisine);
-    } else {
-      this.removeCuisineStyle(cuisine);
-    }
-    console.log(this.ingredientService.selectedCuisineStyle);
-  }
-
-  removeCuisineStyle(cuisine: string) {
-    let currentIndex = this.ingredientService.selectedCuisineStyle.findIndex(
-      (index) => index == cuisine
-    );
-    this.ingredientService.selectedCuisineStyle.splice(currentIndex, 1);
-  }
-
-  styleIncludes(cuisine: string) {
-    return this.ingredientService.selectedCuisineStyle.includes(cuisine);
-  }
-
-  isSelected(cuisine:string) {
-    return this.ingredientService.selectedCuisineStyle.includes(cuisine);
-  }
 }

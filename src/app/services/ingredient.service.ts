@@ -10,7 +10,8 @@ export class IngredientService {
   ingredient: string = '';
   crowd: number | null = null;
   portions: number = 2;
-  persons:number = 1;
+  persons: number = 1;
+  detailPreference: string | null = null;
   addedIngredients: Ingredient[] = [];
   selectedCuisineStyle: string[] = [];
   selectedDietPreferences: string[] = [];
@@ -28,5 +29,18 @@ export class IngredientService {
     this.addedIngredients.push(newIngredient);
     this.ingredient = '';
     this.crowd = null;
+  }
+
+  toggleValue(list: string[], value: string) {
+    const i = list.indexOf(value);
+    i === -1 ? list.push(value) : list.splice(i, 1);
+  }
+
+  selectSingle(key: 'detailPreference', value: string) {
+    this[key] = value;
+  }
+
+  isSelectedSingle(key: 'detailPreference', value: string) {
+    return this[key] === value;
   }
 }

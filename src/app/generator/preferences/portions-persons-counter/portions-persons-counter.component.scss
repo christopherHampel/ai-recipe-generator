@@ -26,5 +26,6 @@
 
   button {
     @include displayFlex(row, center, center, 0);
+    cursor: pointer;
   }
 }

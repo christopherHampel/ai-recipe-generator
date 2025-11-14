@@ -1,25 +1,28 @@
-  <section>
-    <div class="flexbox">
-      <div class="headline">
-        <img src="/img/schedule.png" alt="" />
-        <h5>Cooking time:</h5>
-      </div>
-
-      <div class="buttons-time">
-        <div>
-          <button (click)="selectOption('Quick')">Quick</button>
-          <span>ab to 20 min</span>
-        </div>
-
-        <div>
-          <button (click)="selectOption('Medium')">Medium</button>
-          <span>25-40 min</span>
-        </div>
-
-        <div>
-          <button (click)="selectOption('Complex')">Complex</button>
-          <span>over 45 min</span>
-        </div>
-      </div>
+<section>
+  <div class="flexbox">
+    <div class="headline">
+      <img src="/img/schedule.png" alt="" />
+      <h5>Cooking time:</h5>
     </div>
-  </section>
+
+    <div class="buttons-time">
+      @for (option of options; track $index) {
+      <button
+        (click)="selectOption(option)"
+        [ngClass]="{ selected: isSelected(option) }"
+      >
+        {{ option }}
+      </button>
+      }
+      <!-- <div *ngFor="let option of options">
+        <button (click)="selectOption(option)" 
+                [ngClass]="{ 'selected': isSelected(option) }">
+          {{ option }}
+        </button>
+        <span *ngIf="option === 'Quick'">ab to 20 min</span>
+        <span *ngIf="option === 'Medium'">25-40 min</span>
+        <span *ngIf="option === 'Complex'">over 45 min</span>
+      </div> -->
+    </div>
+  </div>
+</section>
