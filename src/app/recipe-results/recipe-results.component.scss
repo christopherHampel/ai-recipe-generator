@@ -5,3 +5,16 @@
   height: 100vh;
   background-color: var(--secondary-btn-green);
 }
+
+article {
+  @include displayFlex(row, center, center, 0);
+}
+
+.header {
+  @include displayFlex(row, flex-start, center, 0);
+}
+
+.flexbox {
+  @include displayFlex(column, center, center, 0);
+  height: 100%;
+}
