@@ -31,6 +31,6 @@ export class PreferencesComponent {
       dietPreferences: this.ingredientService.selectedDietPreferences,
     }
     console.log(recipeInfo);
-    this.router.navigate(['/results']);
+    this.router.navigate(['/results/generating']);
   }
 }

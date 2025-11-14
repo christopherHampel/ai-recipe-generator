@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "../shared/header/header.component";
-import { SingleResultComponent } from "./single-result/single-result.component";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-results',
-  imports: [HeaderComponent, SingleResultComponent],
+  imports: [HeaderComponent, RouterOutlet],
   templateUrl: './recipe-results.component.html',
   styleUrl: './recipe-results.component.scss'
 })

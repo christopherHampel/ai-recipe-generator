@@ -1,0 +1,28 @@
+@use "./../../../mixins.scss" as *;
+@use "./../../../styles.scss" as *;
+
+.main-content {
+  @include displayFlex(column, flex-start, center, 88px);
+
+  .introduction {
+    @include displayFlex(row, center, center, 96px);
+
+    aside {
+      width: 610px;
+      @include displayFlex(column, flex-start, flex-start, 24px);
+      h3,
+      h5 {
+        color: #ffff;
+      }
+    }
+
+    p {
+      @include displayFlex(row, center, center, 16px);
+    }
+
+    img {
+      border-radius: 20px;
+      width: 574px;
+    }
+  }
+}
