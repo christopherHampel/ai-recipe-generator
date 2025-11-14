@@ -17,7 +17,7 @@ ul {
   border-radius: 20px;
   padding: 24px;
   @include displayFlex(column, flex-start, flex-start, 24px);
-  background-color: rgba(var(--secondary-btn-green), 0.3);
+  background-color: rgba($color: #396039, $alpha: 0.3);
 
   .list-ingredients {
     width: 100%;

@@ -7,13 +7,17 @@
 
     <div class="buttons-time">
       @for (option of options; track $index) {
-      <button
-        class="selected-btn"
-        (click)="selectOption(option)"
-        [ngClass]="{ selected: isSelected(option) }"
-      >
-        {{ option }}
-      </button>
+      <aside>
+        <button
+          class="selected-btn"
+          (click)="selectOption(option.option)"
+          [ngClass]="{ selected: isSelected(option.option) }"
+        >
+          {{ option.option }}
+        </button>
+        <span>{{ option.description }}</span>
+      </aside>
+
       }
     </div>
   </div>

@@ -7,12 +7,13 @@
 }
 
 .main-content {
-  @include displayFlex(column, flex-start, flex-start, 88px);
+  @include displayFlex(column, flex-start, center, 88px);
 
   .introduction {
-    @include displayFlex(row, space-between, flex-start, 0);
+    @include displayFlex(row, center, center, 96px);
 
     aside {
+      width: 610px;
       @include displayFlex(column, flex-start, flex-start, 24px);
       h3,
       h5 {
@@ -23,40 +24,10 @@
     p {
       @include displayFlex(row, center, center, 16px);
     }
-  }
-}
 
-.recipes {
-  @include displayFlex(row, center, center, 24px);
-
-  h5 {
-    font-weight: 600;
-  }
-
-  aside {
-    @include displayFlex(column, flex-start, flex-start, 16px);
-    background-color: var(--grey-background);
-
-    border-radius: 20px;
-    padding: 32px 24px;
-
-    figure {
-      @include displayFlex(row, center, center, 16px);
-    }
-  }
-
-  section {
-    width: 363px;
-    @include displayFlex(column, flex-start, flex-start, 16px);
-
-    span {
-      @include styleFont("Quicksand", 32px, 600);
-      color: var(--green-dark);
-    }
-
-    p {
-      @include displayFlex(row, center, center, 4px);
-      @include styleFont("Quicksand", 20px, 500);
+    img {
+      border-radius: 20px;
+      width: 574px;
     }
   }
 }

@@ -1,3 +1,11 @@
-// @use './../../../../mixins.scss' as *;
+@use './../../../../mixins.scss' as *;
 // @use './../../../../styles.scss' as *;
 @use './../../../generator/preferences/preferences.component.scss';
+
+aside {
+    @include displayFlex(column, flex-start, center, 12px);
+
+    span {
+        color: var(--middle-green);
+    }
+}

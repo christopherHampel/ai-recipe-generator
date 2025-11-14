@@ -1,0 +1,42 @@
+@use './../../../mixins.scss' as *;
+@use './../../../styles.scss' as *;
+
+.recipes {
+  width: 100%;
+  @include displayFlex(row, center, center, 24px);
+
+  h5 {
+    font-weight: 600;
+  }
+
+  aside {
+    @include displayFlex(column, flex-start, flex-start, 48px);
+    background-color: var(--grey-background);
+
+    border-radius: 20px;
+    padding: 32px 24px;
+
+    figure {
+      @include displayFlex(row, flex-start, center, 16px);
+    }
+
+    div {
+      @include displayFlex(column, flex-start, flex-start, 16px);
+    }
+  }
+
+  section {
+    width: 363px;
+    @include displayFlex(column, flex-start, flex-start, 16px);
+
+    span {
+      @include styleFont("Quicksand", 32px, 600);
+      color: var(--green-dark);
+    }
+
+    p {
+      @include displayFlex(row, center, center, 4px);
+      @include styleFont("Quicksand", 20px, 500);
+    }
+  }
+}

@@ -17,7 +17,7 @@
   width: 577px;
   @include displayFlex(row, flex-end, flex-start, 32px);
   padding: 25px 32px;
-  background-color: rgba(var(--secondary-btn-green), 0.3);
+  background-color: rgba($color: #396039, $alpha: 0.3);
   border-radius: 20px;
   .ingredient {
     @include displayFlex(column, flex-start, flex-start, 16px);

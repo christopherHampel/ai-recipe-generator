@@ -10,7 +10,11 @@ import { IngredientService } from '../../../services/ingredient.service';
   styleUrl: './detail-preferences.component.scss',
 })
 export class DetailPreferencesComponent extends PreferenceBaseComponent {
-  options = ['Quick', 'Medium', 'Complex'];
+  options = [
+    { option: 'Quick', description: 'ab to 20 min' },
+    { option: 'Medium', description: '25-40 min' },
+    { option: 'Complex', description: 'over 45 min' },
+  ];
 
   list = [];
 
