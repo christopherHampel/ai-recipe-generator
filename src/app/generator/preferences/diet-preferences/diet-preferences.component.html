@@ -8,7 +8,9 @@
     <div class="buttons-time">
       @for (diet of dietPreferences; track $index) {
       <div (click)="toggleList(diet)">
-        <button [ngClass]="{'selected': isSelected(diet)}">{{ diet }}</button>
+        <button class="selected-btn" [ngClass]="{ selected: isSelected(diet) }">
+          {{ diet }}
+        </button>
       </div>
       }
     </div>

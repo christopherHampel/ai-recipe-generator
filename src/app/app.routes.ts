@@ -3,6 +3,7 @@ import { StartComponent } from './start/start.component';
 import { GeneratorComponent } from './generator/generator.component';
 import { PreferencesComponent } from './generator/preferences/preferences.component';
 import { IngredientsComponent } from './generator/ingredients/ingredients.component';
+import { RecipeResultsComponent } from './recipe-results/recipe-results.component';
 
 export const routes: Routes = [
   {
@@ -23,4 +24,8 @@ export const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'results',
+    component: RecipeResultsComponent
+  }
 ];

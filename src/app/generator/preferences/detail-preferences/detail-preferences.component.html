@@ -8,21 +8,13 @@
     <div class="buttons-time">
       @for (option of options; track $index) {
       <button
+        class="selected-btn"
         (click)="selectOption(option)"
         [ngClass]="{ selected: isSelected(option) }"
       >
         {{ option }}
       </button>
       }
-      <!-- <div *ngFor="let option of options">
-        <button (click)="selectOption(option)" 
-                [ngClass]="{ 'selected': isSelected(option) }">
-          {{ option }}
-        </button>
-        <span *ngIf="option === 'Quick'">ab to 20 min</span>
-        <span *ngIf="option === 'Medium'">25-40 min</span>
-        <span *ngIf="option === 'Complex'">over 45 min</span>
-      </div> -->
     </div>
   </div>
 </section>

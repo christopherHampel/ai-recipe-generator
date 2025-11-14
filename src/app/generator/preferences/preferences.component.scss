@@ -32,19 +32,6 @@ section {
     div {
       @include displayFlex(column, center, center, 12px);
 
-      button {
-        padding: 6px 12px;
-        border-radius: 30px;
-        background-color: var(--creamy);
-        @include styleFont("Quicksand", 20px, 500);
-        color: var(--middle-green);
-        cursor: pointer;
-
-        &:hover {
-          background-color: #FAE0C6;
-        }
-      }
-
       span {
         @include styleFont("Quicksand", 14px, 500);
       }

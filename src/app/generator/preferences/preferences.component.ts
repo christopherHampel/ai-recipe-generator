@@ -3,7 +3,7 @@ import { DetailPreferencesComponent } from './detail-preferences/detail-preferen
 import { PortionsPersonsCounterComponent } from './portions-persons-counter/portions-persons-counter.component';
 import { CuisineStyleComponent } from './cuisine-style/cuisine-style.component';
 import { DietPreferencesComponent } from './diet-preferences/diet-preferences.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { IngredientService } from '../../services/ingredient.service';
 
 @Component({
@@ -19,6 +19,7 @@ import { IngredientService } from '../../services/ingredient.service';
   styleUrl: './preferences.component.scss',
 })
 export class PreferencesComponent {
+  private router = inject(Router);
   private ingredientService = inject(IngredientService);
 
   generateRecipe() {
@@ -30,6 +31,6 @@ export class PreferencesComponent {
       dietPreferences: this.ingredientService.selectedDietPreferences,
     }
     console.log(recipeInfo);
-    
+    this.router.navigate(['/results']);
   }
 }

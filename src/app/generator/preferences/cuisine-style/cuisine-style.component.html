@@ -8,7 +8,7 @@
     <div class="buttons-time">
       @for (cuisine of cuisinesStyles; track $index) {
       <div (click)="toggleList(cuisine)">
-        <button [ngClass]="{ selected: isSelected(cuisine) }">
+        <button class="selected-btn" [ngClass]="{ selected: isSelected(cuisine) }">
           {{ cuisine }}
         </button>
       </div>
