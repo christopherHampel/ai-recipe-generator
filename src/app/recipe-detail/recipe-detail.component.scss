@@ -1,0 +1,13 @@
+@use './../../mixins.scss' as *;
+@use './../../styles.scss' as *;
+
+.overview {
+    @include displayFlex(row, space-between, center, 0);
+    background-color: var(--creamy);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.main-information {
+    width: 619px;
+}

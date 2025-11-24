@@ -6,6 +6,7 @@ import { IngredientsComponent } from './generator/ingredients/ingredients.compon
 import { RecipeResultsComponent } from './recipe-results/recipe-results.component';
 import { GenerateComponent } from './recipe-results/generate/generate.component';
 import { AllResultsComponent } from './recipe-results/all-results/all-results.component';
+import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 
 export const routes: Routes = [
   {
@@ -39,5 +40,9 @@ export const routes: Routes = [
         component: AllResultsComponent,
       },
     ],
+  },
+  {
+    path: 'recipe_detail',
+    component: RecipeDetailComponent,
   },
 ];

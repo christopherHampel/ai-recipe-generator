@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
 export class GenerateComponent {
   private router = inject(Router);
 
-  // ngOnInit() {
-  //   setTimeout(() => {
-  //     this.router.navigate(['/results/all_results']);
-  //   }, 3000);
-  // }
+  ngOnInit() {
+    setTimeout(() => {
+      this.router.navigate(['/results/all_results']);
+    }, 3000);
+  }
 }
