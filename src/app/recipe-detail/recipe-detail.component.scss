@@ -44,7 +44,7 @@ main {
   padding-left: 8px;
 
   p {
-    @include styleFont('Quicksand', 18px, 500);
+    @include styleFont("Quicksand", 18px, 500);
     color: var(--green-dark);
   }
 }

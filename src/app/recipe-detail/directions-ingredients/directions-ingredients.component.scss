@@ -1,0 +1,26 @@
+@use "./../../../mixins.scss" as *;
+@use "./../../../styles.scss" as *;
+
+.ingredients-list {
+  @include displayFlex(row, center, center, 80px);
+
+  .own-ingredients,
+  .extra-ingredients {
+    @include displayFlex(column, center, flex-start, 24px);
+  }
+
+  span {
+    @include styleFont("Quicksand", 24px, 600);
+    color: var(--rezepten);
+  }
+
+  ul {
+    li {
+      list-style-type: disc;
+      span {
+        @include styleFont("Quicksand", 24px, 500);
+        color: var(--green-dark);
+      }
+    }
+  }
+}
