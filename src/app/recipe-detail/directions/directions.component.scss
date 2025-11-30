@@ -1,0 +1,142 @@
+@use "./../../../mixins.scss" as *;
+@use "./../../../styles.scss" as *;
+
+.directions {
+
+  .hero {
+    width: 100%;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    h2 {
+      @include styleFont("Quicksand", 32px, 600);
+      color: var(--middle-green);
+      position: absolute;
+      top: 58.5%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      z-index: 1;
+    }
+  }
+
+  .directions-content {
+    padding: 40px 24px;
+
+    .directions-header {
+      @include displayFlex(row, center, center, 24px);
+      position: relative;
+      margin-bottom: 40px;
+
+      .decoration-left,
+      .decoration-right {
+        img {
+          width: auto;
+          height: 60px;
+        }
+      }
+
+      h2 {
+        @include styleFont("Quicksand", 48px, 600);
+        color: var(--green-dark);
+        margin: 0;
+      }
+    }
+
+    .steps-container {
+      @include displayFlex(row, space-between, flex-start, 40px);
+      max-width: 1200px;
+      margin: 0 auto;
+
+      .steps-column {
+        @include displayFlex(column, flex-start, flex-start, 32px);
+        flex: 1;
+
+        .step {
+          @include displayFlex(row, flex-start, flex-start, 16px);
+          width: 100%;
+
+          .step-number {
+            @include styleFont("Quicksand", 18px, 500);
+            @include displayFlex(row, center, center, 0);
+            color: var(--middle-green);
+            padding: 10px 3px;
+            border-radius: 31.5px;
+            width: 32px;
+            height: 32px;
+            background-color: var(--creamy);
+            // flex-shrink: 0;
+          }
+
+          .step-content {
+            flex: 1;
+            @include displayFlex(column, flex-start, flex-start, 12px);
+
+            .step-header {
+              @include displayFlex(row, space-between, center, 16px);
+              width: 100%;
+              flex-wrap: wrap;
+
+              .step-title {
+                @include styleFont("Quicksand", 24px, 500);
+                color: var(--green-dark);
+              }
+
+              .chef-badge {
+                @include styleFont("Quicksand", 16px, 500);
+                color: var(--green-dark);
+                padding: 4px 12px;
+                border-radius: 4px;
+                white-space: nowrap;
+
+                &.chef-1 {
+                  background-color: rgba(219, 224, 219, 0.8); // light gray
+                }
+
+                &.chef-2 {
+                  background-color: rgba(139, 111, 71, 0.2); // light brown
+                }
+              }
+            }
+
+            .step-instructions {
+              @include styleFont("Quicksand", 18px, 500);
+              color: var(--green-dark);
+            }
+          }
+        }
+      }
+
+      .left-column {
+        padding-right: 20px;
+      }
+
+      .right-column {
+        padding-left: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .directions {
+    .directions-content {
+      .steps-container {
+        @include displayFlex(column, flex-start, flex-start, 32px);
+
+        .steps-column {
+
+          &.left-column,
+          &.right-column {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}

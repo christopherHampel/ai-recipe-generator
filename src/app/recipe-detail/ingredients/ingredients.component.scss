@@ -1,0 +1,51 @@
+@use "./../../../mixins.scss" as *;
+@use "./../../../styles.scss" as *;
+
+.ingredients {
+  .hero {
+    width: 100%;
+    position: relative;
+    
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    h2 {
+      @include styleFont("Quicksand", 32px, 600);
+      color: var(--middle-green);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      z-index: 1;
+    }
+  }
+}
+
+.ingredients-list {
+  @include displayFlex(row, center, flex-start, 80px);
+
+  .own-ingredients,
+  .extra-ingredients {
+    @include displayFlex(column, center, flex-start, 24px);
+  }
+
+  span {
+    @include styleFont("Quicksand", 24px, 600);
+    color: var(--rezepten);
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    
+    li {
+      @include styleFont("Quicksand", 24px, 500);
+      color: var(--green-dark);
+    }
+  }
+}
+

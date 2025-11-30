@@ -1,0 +1,71 @@
+@use './../../../mixins.scss' as *;
+@use './../../../styles.scss' as *;
+
+.overview {
+    @include displayFlex(row, space-between, center, 0);
+    background-color: var(--creamy);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.main-information {
+    div {
+        @include displayFlex(row, flex-start, center, 4px);
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+
+        span {
+            @include styleFont("Quicksand", 20px, 500);
+            color: var(--secondary-btn-green);
+        }
+    }
+}
+
+.nutritional-information {
+    @include displayFlex(column, center, flex-start, 24px);
+}
+
+.nutrial-informations {
+    @include displayFlex(column, center, flex-start, 8px);
+    padding-left: 8px;
+
+    p {
+        @include styleFont("Quicksand", 18px, 500);
+        color: var(--green-dark);
+    }
+}
+
+table {
+    @include displayFlex(row, center, center, 24px);
+
+    tr {
+        @include displayFlex(column, center, center, 8px);
+
+        td {
+            @include styleFont("Quicksand", 20px, 500);
+            color: var(--green-dark);
+        }
+
+        .designation {
+            @include styleFont("Quicksand", 22px, 700);
+        }
+    }
+}
+
+.recipe-infos {
+    @include displayFlex(row, center, center, 16px);
+  
+    .selected-btn {
+      background-color: rgba($color: #396039, $alpha: 0.2);
+      padding: 6px 12px;
+      @include styleFont("Quicksand", 18px, 500);
+  
+      &:hover {
+        background-color: rgba($color: #396039, $alpha: 0.2);
+        cursor: default;
+      }
+    }
+  }
