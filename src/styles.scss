@@ -127,3 +127,13 @@ button {
     background-color: #fae0c6;
   }
 }
+
+.back-link {
+  @include displayFlex(row, flex-start, center, 8px);
+  cursor: pointer;
+
+  span {
+    @include styleFont('Quicksand', 14px, 500);
+    color: var(--middle-green);
+  }
+}

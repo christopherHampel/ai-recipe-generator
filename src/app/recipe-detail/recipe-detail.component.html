@@ -1,5 +1,11 @@
 <section class="max-width">
-  <app-header [logoColor]="'green'"></app-header>
+  <div>
+    <app-header [logoColor]="'green'"></app-header>
+    <article (click)="goToRecipeResults()" class="back-link">
+      <img src="/img/Arrow_left.png" alt="Arrow left" />
+      <span>Recipe results</span>
+    </article>
+  </div>
 
   <main>
     <app-detail-header></app-detail-header>
@@ -13,4 +19,6 @@
       <img src="/img/Heart.png" alt="Heart">
     </aside>
   </main>
+
+  <button (click)="testN8n()">Test N8n</button>
 </section>
