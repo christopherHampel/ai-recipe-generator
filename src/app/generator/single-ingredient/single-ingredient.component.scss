@@ -5,10 +5,134 @@ ul {
   width: 100%;
   @include displayFlex(row, space-between, center, 0);
   @include styleFont("Quicksand", 18px, 500);
+  list-style-position: inside;
+  list-style-type: disc;
+  padding-inline-start: 20px;
+  padding: 2px 4px;
+
+  &:hover:not(.editing) {
+    background-color: var(--creamy);
+    cursor: pointer;
+    border-radius: 8px;
+  }
+}
+
+.ingredient-crowd {
+  // @include displayFlex(row, flex-start, center, 8px);
+  // flex: 1;
+  @include styleFont("Quicksand", 18px, 500);
 }
 
 .edit-delete {
   @include displayFlex(row, center, center, 16px);
+  
+  button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+      width: auto;
+      height: auto;
+      max-width: 24px;
+      max-height: 24px;
+      object-fit: contain;
+    }
+  }
+}
+
+.edit-mode {
+  @include displayFlex(row, flex-start, center, 8px);
+}
+
+.edit-crowd-input {
+  border-radius: 48px;
+  background-color: var(--creamy);
+  height: 36px;
+  width: 61px;
+  padding: 0 12px;
+  border: none;
+  outline: none;
+  @include displayFlex(row, center, center, 0);
+  @include styleFont("Quicksand", 16px, 500);
+  color: var(--green-dark);
+  text-align: center;
+  
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  &[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+}
+
+.custom-select {
+  border-radius: 48px;
+  background-color: var(--creamy);
+  height: 36px;
+  width: 82px;
+  @include displayFlex(row, center, center, 0);
+  position: relative;
+  z-index: 10;
+}
+
+.selected {
+  @include displayFlex(row, center, center, 8px);
+  @include styleFont("Quicksand", 16px, 500);
+  padding: 0 5px;
+  border-radius: 48px;
+  z-index: 9;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+}
+
+.arrow {
+  transition: transform 0.25s ease;
+  width: 16px;
+  height: 16px;
+}
+
+.options {
+  @include styleFont("Quicksand", 16px, 500);
+  background-color: var(--creamy);
+  border-radius: 8px;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.option {
+  padding: 8px 12px;
+  transition: background 0.2s;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.option:hover {
+  background: #eee;
+}
+
+.edit-name-input {
+  flex: 1;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  @include styleFont("Quicksand", 18px, 500);
+  color: inherit;
+  min-width: 100px;
 }
 
 .ingredients-list-righside {

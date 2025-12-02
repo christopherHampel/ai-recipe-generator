@@ -3,19 +3,67 @@
   <div class="list-ingredients">
     @if(ingredients.length > 0) { @for (ingredient of ingredients; track $index)
     {
-    <ul>
-      <li class="ingredient-crowd">
-        {{ ingredient.crowd }} {{ ingredient.unit }}
-        {{ ingredient.name }}
-      </li>
-      <div class="edit-delete">
-        <button (click)="editIngredient(ingredient)">
-          <img src="\img\edit_cuisine.png" alt="Edit" />
-        </button>
-        <button (click)="deleteIngredient(ingredient)">
-          <img src="/img/delete_cuisine.png" alt="" />
-        </button>
-      </div>
+    <ul [class.editing]="editingIndex === $index">
+      @if(editingIndex === $index) {
+        <!-- Edit Mode -->
+        <li class="ingredient-crowd edit-mode">
+          <input 
+            type="number" 
+            [(ngModel)]="editedCrowd" 
+            class="edit-crowd-input"
+          />
+          <div class="custom-select" tabindex="0" (blur)="closeDropdown()">
+            <div class="selected" (click)="toggleUnitDropdown()">
+              {{ editedUnit }}
+              <img
+                class="arrow"
+                [src]="
+                  isDropdownOpen
+                    ? '/img/arrow_drop_up.png'
+                    : '/img/arrow_drop_down.png'
+                "
+                alt="Dropdown arrow"
+              />
+            </div>
+            <div class="options" *ngIf="isDropdownOpen">
+              <div
+                class="option"
+                *ngFor="let unit of units"
+                (click)="selectUnit(unit)"
+              >
+                {{ unit }}
+              </div>
+            </div>
+          </div>
+          <input 
+            type="text" 
+            [(ngModel)]="editedName" 
+            class="edit-name-input"
+          />
+        </li>
+        <div class="edit-delete">
+          <button (click)="saveEdit($index)" class="save-btn">
+            <img src="/img/check.png" alt="Save" />
+          </button>
+          <button (click)="deleteIngredient(ingredient)" class="delete-btn">
+            <img src="/img/delete_cuisine.png" alt="Delete" />
+          </button>
+        </div>
+      } @else {
+        <!-- Display Mode -->
+        <li class="ingredient-crowd">
+          {{ ingredient.crowd }} {{ ingredient.unit }}
+          {{ ingredient.name }}
+        </li>
+        <div class="edit-delete">
+          <button (click)="editIngredient(ingredient, $index)">
+            <img src="/img/edit_cuisine.png" alt="Edit" />
+          </button>
+          <button (click)="deleteIngredient(ingredient)">
+            <img src="/img/delete_cuisine.png" alt="" />
+          </button>
+        </div>
+      }
     </ul>
     } }
   </div>

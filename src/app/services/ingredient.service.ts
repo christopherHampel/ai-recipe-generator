@@ -31,6 +31,15 @@ export class IngredientService {
     this.crowd = null;
   }
 
+  updateIngredient(index: number, updatedIngredient: Partial<Ingredient>) {
+    if (index >= 0 && index < this.addedIngredients.length) {
+      this.addedIngredients[index] = {
+        ...this.addedIngredients[index],
+        ...updatedIngredient,
+      };
+    }
+  }
+
   toggleValue(list: string[], value: string) {
     const i = list.indexOf(value);
     i === -1 ? list.push(value) : list.splice(i, 1);
