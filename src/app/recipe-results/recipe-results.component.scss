@@ -4,6 +4,11 @@
 .recipe-results {
   height: 100vh;
   background-color: var(--secondary-btn-green);
+
+  div {
+    position: fixed;
+    padding-left: 68px;
+  }
 }
 
 article {

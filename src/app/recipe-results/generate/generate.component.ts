@@ -11,8 +11,8 @@ export class GenerateComponent {
   private router = inject(Router);
 
   ngOnInit() {
-    setTimeout(() => {
-      this.router.navigate(['/results/all_results']);
-    }, 3000);
+    // setTimeout(() => {
+    //   this.router.navigate(['/results/all_results']);
+    // }, 3000);
   }
 }

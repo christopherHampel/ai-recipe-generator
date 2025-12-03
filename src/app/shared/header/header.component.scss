@@ -4,6 +4,10 @@ section {
   padding: 40px 40px 0 0px;
   @include displayFlex(column, flex-start, flex-start, 32px);
 
+  article {
+    cursor: pointer;
+  }
+
   span {
     @include styleFont('Quicksand', 14px, 500);
     color: var(--middle-green);

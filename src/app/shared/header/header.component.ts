@@ -11,4 +11,8 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   @Input() logoColor:string = '';
   public router = inject(Router);
+
+  navigateToHome() {
+    this.router.navigate(['/']);
+  }
 }

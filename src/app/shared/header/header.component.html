@@ -1,5 +1,5 @@
 <section>
-  <article>
+  <article (click)="navigateToHome()">
     @if(logoColor == 'green') {
     <img src="/img/logo_image_green.png" alt="Logo_Image" />
     <img src="/img/logo_lettering_green.png" alt="Logo_Image" />
@@ -8,11 +8,4 @@
     <img src="/img/logo_lettering.png" alt="Logo_Image" />
     }
   </article>
-
-  <!-- @if(this.router.url == '/recipe_detail') {
-  <article class="back-link">
-    <img src="/img/Arrow_left.png" alt="Arrow left" />
-    <span>Recipe results</span>
-  </article>
-  } -->
 </section>

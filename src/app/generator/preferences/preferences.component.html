@@ -23,6 +23,7 @@
     <button
     (click)="generateRecipe()"
       [routerLink]=""
+      [disabled]="!isFormValid"
       class="primary-btn-green"
     >
       Generate a recipe

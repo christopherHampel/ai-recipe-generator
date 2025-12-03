@@ -22,6 +22,14 @@ export class PreferencesComponent {
   private router = inject(Router);
   private ingredientService = inject(IngredientService);
 
+  get isFormValid(): boolean {
+    return (
+      this.ingredientService.detailPreference !== null &&
+      this.ingredientService.selectedCuisineStyle.length > 0 &&
+      this.ingredientService.selectedDietPreferences.length > 0
+    );
+  }
+
   generateRecipe() {
     let recipeInfo = {
       portions: this.ingredientService.portions,

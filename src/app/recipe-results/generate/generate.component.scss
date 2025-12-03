@@ -1,7 +1,9 @@
 @use './../../../mixins.scss' as *;
 
 section {
-    @include displayFlex(column, center, center, 32px);
+    // @include displayFlex(column, center, center, 32px);
+    // height: 100%;
+    // min-height: 0;
 
     article {
         width: 253px;
@@ -9,11 +11,13 @@ section {
         border-radius: 20px;
         background-color: var(--generate-background);
         @include displayFlex(row, center, center, 0);
+        flex-shrink: 0;
     }
 
     span {
         @include styleFont('Ubuntu', 48px, 700);
         color: var(--creamy);
+        flex-shrink: 0;
     }
 }
 
