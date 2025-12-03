@@ -69,8 +69,9 @@ export class SingleIngredientComponent {
 
   deleteIngredient(ingredient: Ingredient) {
     const index = this.ingredientsService.addedIngredients.indexOf(ingredient);
-    if (index > -1) {
-      this.ingredientsService.addedIngredients.splice(index, 1);
+    if (index === this.editingIndex) {
+      this.cancelEdit();
     }
+    this.ingredientsService.deleteIngredient(ingredient);
   }
 }

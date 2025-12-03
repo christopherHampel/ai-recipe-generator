@@ -40,6 +40,13 @@ export class IngredientService {
     }
   }
 
+  deleteIngredient(ingredient: Ingredient) {
+    const index = this.addedIngredients.indexOf(ingredient);
+    if (index > -1) {
+      this.addedIngredients.splice(index, 1);
+    }
+  }
+
   toggleValue(list: string[], value: string) {
     const i = list.indexOf(value);
     i === -1 ? list.push(value) : list.splice(i, 1);
