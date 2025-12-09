@@ -15,6 +15,7 @@ export class IngredientService {
   addedIngredients: Ingredient[] = [];
   selectedCuisineStyle: string[] = [];
   selectedDietPreferences: string[] = [];
+  recipeInfo: any = {};
 
   constructor() {}
 

@@ -5,8 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class N8nCommunicationService {
-  // private apiUrl = 'http://localhost:5678/webhook-test/generate-recipe';
-  private apiUrl = 'http://localhost:5678/webhook-test/3ef0fda8-06e9-467f-acbc-4aca5ab63544';
+  private apiUrl = 'http://localhost:5678/webhook-test/e3369e1f-055e-4a12-a717-8c9e6ca32187';
 
   constructor(private http: HttpClient) {}
 
