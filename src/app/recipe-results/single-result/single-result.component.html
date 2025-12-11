@@ -1,17 +1,17 @@
       <article class="recipes">
-        @for (item of recipes; track $index) {
+        @for (recipe of recipes; track $index) {
         <aside>
           <div>
             <figure>
               <img src="/img/gourmet_food.png" alt="Gourmet Food" />
-              <h5>Recipe 1</h5>
+              <h5>Recipe {{ $index + 1 }}</h5>
             </figure>
 
             <section>
-              <span>Pasta with spinach and cherry tomatoes</span>
+              <span>{{ recipe.Rezeptname }}</span>
               <p>
                 <img src="/img/schedule.png" alt="Watch" />
-                Cooking time: 20 min
+                {{ recipe.Kochzeit }}
               </p>
             </section>
           </div>

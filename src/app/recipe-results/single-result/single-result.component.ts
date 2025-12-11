@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { N8nCommunicationService } from '../../services/n8n-communication/n8n-communication.service';
 
 @Component({
   selector: 'app-single-result',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './single-result.component.scss'
 })
 export class SingleResultComponent {
-    recipes: string[] = ['', '', ''];
+  private n8nCommunicationService = inject(N8nCommunicationService);
+  // recipes: string[] = ['', '', ''];
+
+  get recipes() {
+    return this.n8nCommunicationService.recipes;
+  }
 }

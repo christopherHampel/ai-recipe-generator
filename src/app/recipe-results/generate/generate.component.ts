@@ -16,7 +16,9 @@ export class GenerateComponent {
 
   ngOnInit() {
     this.n8nCommunicationService.sendIngredients(this.ingredientService.recipeInfo).subscribe(response => {
-      console.log(response);
+      // this.n8nCommunicationService.recipes.push(response);
+      this.n8nCommunicationService.recipes = response;
+      console.log(this.n8nCommunicationService.recipes);
       this.router.navigate(['/results/all_results']);
     });
   }
