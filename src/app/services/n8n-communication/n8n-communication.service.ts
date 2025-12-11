@@ -11,6 +11,7 @@ export class N8nCommunicationService {
   constructor(private http: HttpClient) {}
 
   sendIngredients(data: any) {
+    console.log(data);
     return this.http.post(this.apiUrl, data);
   }
 }

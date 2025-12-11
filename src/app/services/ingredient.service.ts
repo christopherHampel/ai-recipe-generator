@@ -12,7 +12,7 @@ export class IngredientService {
   portions: number = 2;
   persons: number = 1;
   detailPreference: string | null = null;
-  addedIngredients: Ingredient[] = [];
+  addedIngredients: any[] = [];
   selectedCuisineStyle: string[] = [];
   selectedDietPreferences: string[] = [];
   recipeInfo: any = {};
@@ -22,11 +22,15 @@ export class IngredientService {
   addIngredient() {
     if (!this.ingredient || this.crowd === null) return;
 
-    const newIngredient = {
-      name: this.ingredient,
-      crowd: this.crowd,
-      unit: this.selectedUnit,
-    };
+    // const newIngredient = {
+    //   name: this.ingredient,
+    //   crowd: this.crowd,
+    //   unit: this.selectedUnit,
+    // };
+    // this.addedIngredients.push(newIngredient);
+    // this.ingredient = '';
+    // this.crowd = null;
+    const newIngredient = this.crowd + '' + this.selectedUnit + '' + this.ingredient;
     this.addedIngredients.push(newIngredient);
     this.ingredient = '';
     this.crowd = null;

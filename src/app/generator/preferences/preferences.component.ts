@@ -40,8 +40,8 @@ export class PreferencesComponent {
     let recipeInfo = {
       "portions": this.ingredientService.portions,
       "persons": this.ingredientService.persons,
-      // ingredients: this.ingredientService.addedIngredients,
-      "ingredients": ['Tomate', 'Pasta'],
+      ingredients: this.ingredientService.addedIngredients,
+      // "ingredients": ['Tomate', 'Pasta'],
       "cuisineStyles": this.ingredientService.selectedCuisineStyle,
       "dietPreferences": this.ingredientService.selectedDietPreferences,
     }
