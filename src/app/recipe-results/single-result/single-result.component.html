@@ -1,4 +1,4 @@
-      <article class="recipes">
+<!-- <article class="recipes">
         @for (recipe of recipes; track $index) {
         <aside>
           <div>
@@ -19,4 +19,27 @@
           <button class="primary-btn-creme">View</button>
         </aside>
         }
-      </article>
+      </article> -->
+
+<article class="recipes">
+  @for (recipe of recipes; track $index) {
+  <aside>
+    <div>
+      <figure>
+        <img src="/img/gourmet_food.png" alt="Gourmet Food" />
+        <h5>Recipe {{ $index + 1 }}</h5>
+      </figure>
+
+      <section>
+        <span>{{ recipe.Rezeptname }}</span>
+        <p>
+          <img src="/img/schedule.png" alt="Watch" />
+          {{ recipe.Kochzeit }}
+        </p>
+      </section>
+    </div>
+
+    <button class="primary-btn-creme">View</button>
+  </aside>
+  }
+</article>

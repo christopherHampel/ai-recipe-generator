@@ -15,11 +15,13 @@ export class GenerateComponent {
   private n8nCommunicationService = inject(N8nCommunicationService);
 
   ngOnInit() {
-    this.n8nCommunicationService.sendIngredients(this.ingredientService.recipeInfo).subscribe(response => {
-      // this.n8nCommunicationService.recipes.push(response);
-      this.n8nCommunicationService.recipes = response;
-      console.log(this.n8nCommunicationService.recipes);
-      this.router.navigate(['/results/all_results']);
-    });
+    this.n8nCommunicationService
+      .sendIngredients(this.ingredientService.recipeInfo)
+      .subscribe((response) => {
+        this.n8nCommunicationService.recipes = response;
+        localStorage.setItem('recipes', JSON.stringify(response));
+        console.log(this.n8nCommunicationService.recipes);
+        this.router.navigate(['/results/all_results']);
+      });
   }
 }
