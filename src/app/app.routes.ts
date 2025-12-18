@@ -42,7 +42,7 @@ export const routes: Routes = [
     ],
   },
   {
-    path: 'recipe_detail',
+    path: 'recipe_detail/:recipeName',
     component: RecipeDetailComponent,
   },
 ];
