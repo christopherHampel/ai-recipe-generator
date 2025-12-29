@@ -19,7 +19,7 @@ section {
 }
 
 .right-side-start {
-  img {
+  picture {
     height: 100vh;
     display: flex;
   }
@@ -39,4 +39,10 @@ section {
 
 .main-content-start {
   @include displayFlex(column, flex-start, flex-start, 64px);
+}
+
+@media(max-width: 1000px) {
+  section {
+    width: 100%;
+  }
 }

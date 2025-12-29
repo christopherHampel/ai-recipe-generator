@@ -8,6 +8,6 @@ import { RecipeDetail } from '../../interfaces/recipe-detail';
   styleUrl: './detail-header.component.scss'
 })
 export class DetailHeaderComponent {
-  @Input() recipe!: RecipeDetail;
+  @Input() recipe?: RecipeDetail;
 
 }
