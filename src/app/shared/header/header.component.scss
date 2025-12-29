@@ -13,3 +13,9 @@ section {
     color: var(--middle-green);
   }
 }
+
+@media(max-width: 360px) {
+  section {
+    padding-right: 30px;
+  }
+}

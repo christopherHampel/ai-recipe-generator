@@ -41,8 +41,59 @@ section {
   @include displayFlex(column, flex-start, flex-start, 64px);
 }
 
-@media(max-width: 1000px) {
+@media (max-width: 1000px) {
   section {
     width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .main-content-start {
+    h2 {
+      font-size: 24px;
+    }
+
+    h1 {
+      font-size: 64px;
+    }
+  }
+
+  .footer-start {
+    flex-direction: column;
+    align-items: flex-start;
+    div {
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  .left-side-start {
+    padding-left: 16px;
+  }
+  .main-content-start {
+    h2 {
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  .secondary-btn-cream {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .main-content-start {
+    h1 {
+      font-size: 36px;
+    }
   }
 }

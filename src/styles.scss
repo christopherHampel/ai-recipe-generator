@@ -68,7 +68,7 @@ h6 {
   padding: 16px 26px;
   background-color: var(--creamy);
   @include styleFont("Quicksand", 24px, 600);
-  color: var(--btn-green);
+  color: var(--rezepten);
   border: none;
 
   &:hover {
@@ -144,5 +144,12 @@ button {
   span {
     @include styleFont('Quicksand', 14px, 500);
     color: var(--middle-green);
+  }
+}
+
+@media(max-width: 650px) {
+  .primary-btn-creme {
+    padding: 12px 16px;
+    font-size: 16px;
   }
 }
