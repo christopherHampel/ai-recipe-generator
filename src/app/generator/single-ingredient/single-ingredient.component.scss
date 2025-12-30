@@ -137,14 +137,166 @@ ul {
 
 .ingredients-list-righside {
   min-height: 209px;
-  width: 478px;
+  width: 100%;
+  max-width: 478px;
   border-radius: 20px;
   padding: 24px;
   @include displayFlex(column, flex-start, flex-start, 24px);
   background-color: rgba($color: #396039, $alpha: 0.3);
 
+  h5 {
+    width: 100%;
+  }
+
   .list-ingredients {
     width: 100%;
     @include displayFlex(column, flex-start, flex-start, 6px);
+  }
+}
+
+// Tablet styles (768px and below)
+@media (max-width: 768px) {
+  .ingredients-list-righside {
+    max-width: 100%;
+    padding: 20px;
+    gap: 20px;
+    min-height: auto;
+
+    h5 {
+      font-size: 20px;
+    }
+  }
+
+  ul {
+    font-size: 16px;
+    padding: 4px 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .ingredient-crowd {
+    font-size: 16px;
+    word-break: break-word;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .edit-delete {
+    gap: 12px;
+    flex-shrink: 0;
+  }
+}
+
+// Mobile styles (480px and below)
+@media (max-width: 480px) {
+  .ingredients-list-righside {
+    padding: 16px;
+    gap: 16px;
+    border-radius: 16px;
+
+    h5 {
+      font-size: 18px;
+    }
+  }
+
+  ul {
+    font-size: 14px;
+    padding: 4px 6px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .ingredient-crowd {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .edit-mode {
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .edit-crowd-input {
+    width: 55px;
+    min-width: 55px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .custom-select {
+    width: 75px;
+    min-width: 75px;
+    height: 32px;
+  }
+
+  .selected {
+    font-size: 14px;
+    padding: 0 4px;
+  }
+
+  .options {
+    font-size: 14px;
+  }
+
+  .edit-name-input {
+    font-size: 14px;
+    min-width: 80px;
+    width: 100%;
+  }
+
+  .edit-delete {
+    gap: 10px;
+    width: 100%;
+    justify-content: flex-end;
+
+    button img {
+      max-width: 20px;
+      max-height: 20px;
+    }
+  }
+}
+
+// Small mobile styles (360px and below)
+@media (max-width: 360px) {
+  .ingredients-list-righside {
+    padding: 12px;
+    gap: 12px;
+
+    h5 {
+      font-size: 16px;
+    }
+  }
+
+  ul {
+    font-size: 12px;
+  }
+
+  .ingredient-crowd {
+    font-size: 12px;
+  }
+
+  .edit-crowd-input {
+    width: 50px;
+    min-width: 50px;
+    font-size: 12px;
+  }
+
+  .custom-select {
+    width: 70px;
+    min-width: 70px;
+  }
+
+  .selected {
+    font-size: 12px;
+  }
+
+  .options {
+    font-size: 12px;
+  }
+
+  .edit-name-input {
+    font-size: 12px;
   }
 }
