@@ -22,15 +22,11 @@ export class IngredientService {
   addIngredient() {
     if (!this.ingredient || this.crowd === null) return;
 
-    // const newIngredient = {
-    //   name: this.ingredient,
-    //   crowd: this.crowd,
-    //   unit: this.selectedUnit,
-    // };
-    // this.addedIngredients.push(newIngredient);
-    // this.ingredient = '';
-    // this.crowd = null;
-    const newIngredient = this.crowd + '' + this.selectedUnit + '' + this.ingredient;
+    const newIngredient = {
+      name: this.ingredient,
+      crowd: this.crowd,
+      unit: this.selectedUnit,
+    };
     this.addedIngredients.push(newIngredient);
     this.ingredient = '';
     this.crowd = null;
