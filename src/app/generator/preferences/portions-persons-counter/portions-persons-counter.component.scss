@@ -3,29 +3,135 @@
 
 .portions-persons {
   @include displayFlex(row, center, center, 120px);
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .portions,
 .persons {
   @include displayFlex(column, flex-start, flex-start, 16px);
+  flex: 1;
+  min-width: 0;
 
   span {
     @include styleFont("Quicksand", 20px, 500);
     color: var(--green-dark);
+    text-align: center;
   }
 
   aside {
     @include displayFlex(row, center, center, 8px);
+    flex-wrap: wrap;
   }
 
   .number-count {
     padding: 1px 5px;
     padding-top: 0;
     background-color: rgba($color: #396039, $alpha: 0.2);
+    min-width: 40px;
+    text-align: center;
   }
 
   button {
     @include displayFlex(row, center, center, 0);
     cursor: pointer;
+
+    img {
+      max-width: 24px;
+      height: auto;
+    }
+  }
+}
+
+// Tablet and smaller
+@media (max-width: 768px) {
+  .portions-persons {
+    gap: 80px;
+  }
+
+  .portions,
+  .persons {
+    gap: 14px;
+
+    span {
+      font-size: 18px;
+    }
+
+    aside {
+      gap: 6px;
+    }
+
+    button img {
+      max-width: 22px;
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 480px) {
+  .portions-persons {
+    gap: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .portions,
+  .persons {
+    width: 100%;
+    align-items: flex-start;
+    gap: 12px;
+
+    span {
+      font-size: 16px;
+      text-align: left;
+    }
+
+    aside {
+      gap: 8px;
+      justify-content: flex-start;
+    }
+
+    .number-count {
+      min-width: 36px;
+      font-size: 18px;
+    }
+
+    button img {
+      max-width: 20px;
+    }
+  }
+}
+
+// Small mobile (320px+)
+@media (max-width: 360px) {
+  .portions-persons {
+    gap: 32px;
+    align-items: flex-start;
+  }
+
+  .portions,
+  .persons {
+    gap: 10px;
+    align-items: flex-start;
+
+    span {
+      font-size: 14px;
+      text-align: left;
+    }
+
+    aside {
+      gap: 6px;
+      justify-content: flex-start;
+    }
+
+    .number-count {
+      min-width: 32px;
+      font-size: 16px;
+      padding: 1px 4px;
+    }
+
+    button img {
+      max-width: 18px;
+    }
   }
 }

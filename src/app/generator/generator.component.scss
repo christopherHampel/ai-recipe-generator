@@ -7,3 +7,9 @@ section {
   }
   @include displayFlex(column, center, center, 64px);
 }
+
+@media(max-width: 800px) {
+  section {
+    gap: 40px;
+  }
+}

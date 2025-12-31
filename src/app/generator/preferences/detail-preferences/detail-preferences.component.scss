@@ -2,10 +2,84 @@
 // @use './../../../../styles.scss' as *;
 @use './../../../generator/preferences/preferences.component.scss';
 
+.buttons-time {
+    flex-wrap: nowrap !important;
+    gap: 12px;
+}
+
 aside {
     @include displayFlex(column, flex-start, center, 12px);
+    min-width: 0;
+    flex: 1 1 0;
+    max-width: 100%;
+
+    button {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
     span {
         color: var(--middle-green);
+        text-align: center;
+        font-size: 12px;
+    }
+}
+
+// Tablet and smaller
+@media (max-width: 768px) {
+    .buttons-time {
+        gap: 10px;
+    }
+
+    aside {
+        gap: 10px;
+
+        span {
+            font-size: 11px;
+        }
+    }
+}
+
+// Mobile
+@media (max-width: 480px) {
+    .buttons-time {
+        gap: 8px;
+    }
+
+    aside {
+        gap: 8px;
+        flex: 1 1 0;
+
+        button {
+            padding: 5px 8px;
+            font-size: 14px;
+        }
+
+        span {
+            font-size: 10px;
+        }
+    }
+}
+
+// Small mobile (320px+)
+@media (max-width: 360px) {
+    .buttons-time {
+        gap: 6px;
+    }
+
+    aside {
+        gap: 6px;
+        flex: 1 1 0;
+
+        button {
+            padding: 4px 6px;
+            font-size: 12px;
+        }
+
+        span {
+            font-size: 9px;
+        }
     }
 }
