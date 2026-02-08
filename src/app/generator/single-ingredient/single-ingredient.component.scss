@@ -17,9 +17,11 @@ ul {
   }
 }
 
+h5 {
+  width: 430px;
+}
+
 .ingredient-crowd {
-  // @include displayFlex(row, flex-start, center, 8px);
-  // flex: 1;
   @include styleFont("Quicksand", 18px, 500);
 }
 
@@ -144,12 +146,7 @@ ul {
   @include displayFlex(column, flex-start, flex-start, 24px);
   background-color: rgba($color: #396039, $alpha: 0.3);
 
-  h5 {
-    width: 100%;
-  }
-
   .list-ingredients {
-    width: 100%;
     @include displayFlex(column, flex-start, flex-start, 6px);
   }
 }
@@ -170,7 +167,6 @@ ul {
   ul {
     font-size: 16px;
     padding: 4px 8px;
-    flex-wrap: wrap;
     gap: 8px;
   }
 
@@ -213,7 +209,6 @@ ul {
   }
 
   .edit-mode {
-    flex-wrap: wrap;
     gap: 6px;
     width: 100%;
   }

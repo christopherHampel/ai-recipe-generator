@@ -19,7 +19,7 @@ export class IngredientsComponent {
   selectedUnit = '';
   units: string[] = [];
 
-  isOpen = true;
+  isOpen = false;
 
   constructor() {
     this.units = this.ingredientService.units;
