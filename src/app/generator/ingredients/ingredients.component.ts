@@ -1,26 +1,25 @@
 import { Component, inject } from '@angular/core';
 import { IngredientService } from '../../services/ingredient.service';
 import { CommonModule } from '@angular/common';
-import { SingleIngredientComponent } from "../single-ingredient/single-ingredient.component";
+import { SingleIngredientComponent } from '../single-ingredient/single-ingredient.component';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-ingredients',
-  imports: [CommonModule, SingleIngredientComponent, RouterLink, FormsModule ],
+  imports: [CommonModule, SingleIngredientComponent, RouterLink, FormsModule],
   templateUrl: './ingredients.component.html',
-  styleUrl: './ingredients.component.scss'
+  styleUrl: './ingredients.component.scss',
 })
 export class IngredientsComponent {
-
-    private ingredientService = inject(IngredientService);
+  private ingredientService = inject(IngredientService);
 
   ingredient = '';
   crowd: number | null = null;
   selectedUnit = '';
   units: string[] = [];
 
-  isOpen = false;
+  isOpen = true;
 
   constructor() {
     this.units = this.ingredientService.units;
@@ -53,6 +52,6 @@ export class IngredientsComponent {
   }
 
   get ingredients() {
-    return this.ingredientService.addedIngredients
+    return this.ingredientService.addedIngredients;
   }
 }
